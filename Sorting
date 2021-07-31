@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>               
+#include <algorithm>            
+#include "./lib/DoubleVector.h"
+using namespace std;
+
+
+
+int main()
+{
+  vector<double> vList = cinDoubleVector();
+  int len = vList.size();
+
+ 
+  for (int i = 0; i < len; i++)
+  {
+    for (int j = 0; j < len - 1 - i; j++)
+    {
+      if (vList[j] > vList[j + 1])
+        swap(vList[j], vList[j + 1]);
+    }
+  }
+
+  coutDoubleVector(vList);
+
+  return 0;
+}
